@@ -18,12 +18,18 @@ const server = http.createServer( function listener(request,response){
 
     // whatever request we are making to this server that is going to execute this listener function 
 
-    console.log(request,"Incoming request details")
-    console.log(response, "Response object details")
-    console.log("request recieved")
+    // console.log(request,"Incoming request details")
+    // console.log(response, "Response object details")
+    // console.log("request recieved")
 
     // as an o/p we can see many things getting printed and in that you can see we have a URL : "/" , METHOD : "GET" and we know that through browser we can only make GET
     // requests
+
+    if(request.url == "/home"){
+        // suppose if someone makes the requset with "/home" as url we want to return "welcome home"
+        response.end("welcome to home")
+        // now if we make a request as ( localhost:3000/home ) and then press enter we can see that 
+    }
 
 } )
 
