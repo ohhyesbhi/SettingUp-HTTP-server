@@ -28,7 +28,11 @@ const server = http.createServer( function listener(request,response){
     if(request.url == "/home"){
         // suppose if someone makes the requset with "/home" as url we want to return "welcome home"
         response.end("welcome to home")
-        // now if we make a request as ( localhost:3000/home ) and then press enter we can see that 
+        // now if we make a request as ( localhost:3000/home ) and then press enter we can see that as an input in the network part in all we can see that as an 
+        // respomse we are getting welcome to home
+
+        // suppose if we try to write response.end({msg:"welcome to home"}) then we can see that there is an error that is coming up that is because response.end only
+        // accepts string as an argument and now instead of string we are sending an JSON object it shows an error
     }
 
 } )
