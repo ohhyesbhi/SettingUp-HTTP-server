@@ -78,3 +78,10 @@ app.listen(PORT,()=>{
 //     processing will be done and after the processing is done the model layer is going to return some response to
 //     the controller and what controller does is controller will take this response and it will form a JSON where
 //     we will setting up the actual data which we will send 
+
+
+
+// Models 
+// -->  the FIRST layer of this model is actually called as SERVICES
+// inside our services we will write our BUISNESS LOGIC and these services will depend on another layer called as repository
+// and the actual role of the Repository layer is do DB interactions 
