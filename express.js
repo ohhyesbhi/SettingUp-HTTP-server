@@ -59,4 +59,14 @@ app.listen(PORT,()=>{
 // and the it fowards to nect middleware which is the last one where we actuallty print ("last middleware") and the we return
 // res.json ({msg : "this is get method"})
 
-// Now let's see what happen if we write return res.json({msg : "sending req from middleware1"})
+// Now let's see what happen if we write return res.json({msg : "sending req from middleware1"}) , now what happens is 
+// we actually return res.json({msg : "sending req from middleware1"}) necause next() function is never called
+
+// Why we need Middlewares
+// --> We can say that middlewares are our first line for defence and the last middleware will be considered as an
+//     CONTROLLER , because last MIDDLEWARE is the one who finally sends the request to the backend and now we can say
+//     why do we need the remaining Middlewares it's because suppose from frontend we are making an post request where
+//     we are sending name,email,pwd  which are manadatory and now let's say the user is not going to send these details
+//     at that time we will not process the request because it's not the error from backend it's actually an error from
+//     client side so what we do is we do request VALIDATIONS through the middle wares if it not matches the validations 
+//     from middleware we send the response back with some msg
