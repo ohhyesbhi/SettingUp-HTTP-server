@@ -8,6 +8,20 @@ const app = express() //create a express server object
 // now the only thing is here we will not be sending the listener function instead we will listening to the requests like
 
 
+const myLogger = (req,res,next)=>{
+  console.log("logging from middleware 1")
+  return res.json({
+    msg : "sending req from middleware1"
+  })
+  next() // calls the next middleware
+}
+
+const extLogger = (req,res,next)=>{
+ console.log("logging from middleware 2")
+ next()
+}
+
+
 app.get("/home",myLogger,extLogger,(req,res)=>{
     // here we have send instead of end
    // res.send("welcome to express GET method")
@@ -17,16 +31,6 @@ app.get("/home",myLogger,extLogger,(req,res)=>{
         msg:"this is GET method"
       })
 })
-
-const myLogger = (req,res,next)=>{
-  console.log("logging from middleware 1")
-  next() // calls the next middleware
-}
-
-const extLogger = ()=>{
- console.log("logging from middleware 2")
- next()
-}
 
 app.post("/home",(req,res)=>{
     // here we have send instead of end
