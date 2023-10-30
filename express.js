@@ -70,3 +70,11 @@ app.listen(PORT,()=>{
 //     at that time we will not process the request because it's not the error from backend it's actually an error from
 //     client side so what we do is we do request VALIDATIONS through the middle wares if it not matches the validations 
 //     from middleware we send the response back with some msg
+
+// Controllers
+// --> Forward requests to backend logic like models , and also it prepares the response object . Now what happens is
+//     we got a request and the we validated the request in the middleware and then middleware forwards it to the
+//     controller and initially controller what it will do is it will forward it to the backend layer and then some
+//     processing will be done and after the processing is done the model layer is going to return some response to
+//     the controller and what controller does is controller will take this response and it will form a JSON where
+//     we will setting up the actual data which we will send 
